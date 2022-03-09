@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Navbar Template with float</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="widht=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Verdana, Tahoma, sans-serif;
+        height: 100%;
+        margin: 0;
+      }
+
+      .navbar {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        background-color: #f1f1f1;
+      }
+
+      .navbar a {
+        display: block;
+        padding: 17px;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+      }
+
+      .navbar a:hover {
+        background-color: #555;
+        color: white;
+      }
+
+      .navbar a.last {
+        display: none;
+      }
+
+      .content {
+        width: 100%;
+        padding: 20px 50px 50px;
+      }
+
+      .footer {
+        position: fixed;
+        bottom: 0;
+        padding: 7px;
+        margin: 0;
+        width: 100%;
+        background-color: #555;
+        color: white;
+        text-align: center;
+      }
+
+      @media screen and (min-width: 600px) {
+        .navbar a {
+          float: left;
+        }
+
+        a.right {
+          float: right;
+        }
+
+        .navbar::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+      }
+
+      @media screen and (min-width: 1080px) {
+        .navbar {
+          position: absolute;
+          float: left;
+          width: 10%;
+          height: 100%;
+        }
+
+        .navbar a {
+          width: 100%;
+          background-color: #f1f1f1;
+       }
+
+        .navbar a.first {
+          margin-top: 50px;
+        }
+
+        /*Just to fix a bug in big width, small heigth (shop link not visible)*/
+        .navbar a.last {
+          display: inline-block;
+        }
+
+        .navbar a.last:hover {
+          background-color: #f1f1f1;
+          cursor: context-menu;
+        }
+
+        .content {
+          width: 90%;
+          margin-left: 10vw;
+          padding: 20px 50px;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="#Home" class="first">Home</a>
+      <a href="#News">News</a>
+      <a href="#Contact">Contact</a>
+      <a href="#About">About</a>
+      <a href="#Shop" class="right">Shop</a>
+      <a href="" class="last"></a>
+    </div>
+
+    <div class="content">
+      <h2>Responsive Navbar Example using float</h2>
+      <p>This example use media queries to transform the sidenav to a top navigation bar when the screen size is 1080px or less.</p>
+      <p>We have also added a media query for screens that are 600px or less, which will vertically stack and center the navigation links.</p>
+      <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
+      <h3>Resize the browser window to see the effect.</h3>
+    </div>
+
+    <div class="footer">
+      This should be a footer
+    </div>
+  </body>
+</html>
