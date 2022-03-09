@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Float Template</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width:device-width, initial scale:1.0" />
+    <style>
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html, body {
+        width: auto;
+        height: 100%;
+        font-family: Verdana, Tahoma, sans-serif;
+        margin:0;
+      }
+
+      .header {
+        width: 100%;
+        height: 15%;
+        background-color: #eee;
+        position: relative;
+      }
+
+      h1, p {
+        color: black;
+        text-align: center;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .row {
+        height: 75%;
+      }
+
+      .row:after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      .column{
+        float: left;
+        width: 33.33%;
+        height: 100%;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .footer {
+        width: 100%;
+        height: 10%;
+        background-color: #eee;
+        position: relative;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Header</h1>
+    </div>
+
+    <div class="row">
+      <div class="column" style="background-color: #bbb;">Column 1</div>
+      <div class="column" style="background-color: #ccc;">Column 2</div>
+      <div class="column" style="background-color: #ddd;">Column 3</div>
+    </div>
+
+    <div class="footer">
+      <p>Footer</p>
+    </div>
+
+  </body>
+</html>

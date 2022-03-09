@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Columns Template with Grid</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Verdana, Tahoma, sans-serif;
+        margin: 0;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-areas:
+          'header header header'
+          'left left left'
+          'middle middle middle'
+          'right right right'
+          'footer footer footer';
+        ;
+      }
+
+      .header {
+        grid-area: header;
+        padding: 27px;
+        margin: 0;
+        background-color: #f1f1f1;
+        text-align: center;
+        font-size: 17px;
+      }
+
+      .left, .middle, .right {
+        padding: 21px;
+        height: 700px;
+        text-align: center;
+      }
+
+      .left {
+        grid-area: left;
+        background-color: #aaa;
+      }
+
+      .middle {
+        grid-area: middle;
+        background-color: #bbb;
+      }
+
+      .right {
+        grid-area: right;
+        background-color: #ccc;
+      }
+
+      .footer {
+        grid-area: footer;
+        padding: 7px;
+        text-align: center;
+      }
+
+      @media screen and (min-width: 600px) {
+        .grid-container {
+          grid-template-areas: 
+            'header header header'
+            'left middle right'
+            'footer footer footer';
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="grid-container">
+      <div class="header">
+        <h1>Header</h1>
+      </div>
+
+      <div class="left">Column 1</div>
+      <div class="middle">Column 2</div>
+      <div class="right">Column 3</div>
+
+      <div class="footer">
+        <p>Footer</p>
+      </div>
+    </div>
+  </body>
+</html>
