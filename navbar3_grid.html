@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <title>Navbar Template with Grid</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=viewport width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      font-family: Verdana, Tahoma, sans-serif;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: 53px 53px 53px 53px 53px 53px auto 51px;
+      height: 100%;
+    }
+
+    .container a {
+      grid-column: 1 / 3;
+      padding: 17px;
+      background-color: #f1f1f1;
+      color: black;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .container a:hover {
+      background-color: #555;
+      color: white;
+    }
+
+    #first, #e, #last {
+      display: none;
+    }
+
+    .content {
+      grid-column: 1 / 3;
+      grid-row: 6 / 8;
+      padding: 20px 50px;
+      background-color: white;
+    }
+
+    .footer {
+      grid-column: 1 / 3;
+      margin: 0;
+      padding: 16px;
+      background-color: #555;
+      color: white;
+      text-align: center;
+    }
+
+    @media screen and (min-width:600px) and (max-width:1080px) {
+      .container {
+        display: grid;
+        grid-template-columns: auto auto auto auto 1fr auto;
+        grid-template-rows: 53px auto 51px;
+      }
+
+      /*It seems like there is no other way to grid-auto-flow grid items in rows when grid-template-row
+      is defined (even if I take it off still items don't "flow nicely in an horizontal direction")*/
+      #a {
+        grid-column: 1 / 2;
+      }
+
+      #b {
+        grid-column: 2 / 3;
+      }
+
+      #c {
+        grid-column: 3 / 4;
+      }
+
+      #d {
+        grid-column: 4 / 5;
+      }
+
+      #e {
+        display: inline-block;
+        grid-column: 5 / 6;
+        grid-row: 1 /2;
+      }
+
+      #f {
+        grid-column: 6 / 7;
+        grid-row: 1 /2;
+      }
+
+      #e:hover {
+        background-color: #f1f1f1;
+      }
+
+      .content {
+        grid-column: 1 / 7;
+        grid-row: 2 / 3;
+        padding: 20px 50px;
+        background-color: white;
+      }
+
+      .footer {
+        grid-column: 1 / 7;
+      }
+    }
+
+    @media screen and (min-width:1080px) {
+      .container a {
+        grid-column: 1 / 2;
+        padding: 17px 28px;
+      }
+
+      #first {
+        display: inline-block;
+        grid-column: 1 / 2;
+        background-color: #f1f1f1;
+      }
+
+      #last {
+        display: inline-block;
+        grid-column: 1 / 2;
+        background-color: #f1f1f1;
+      }
+
+      #first:hover, #last:hover {
+        background-color: #f1f1f1;
+      }
+
+      .content {
+        grid-column: 2 / 3;
+        grid-row: 1 / 8;
+        padding: 20px 50px;
+        background-color: white;
+      }
+    }
+
+  </style>
+  <body>
+    <div class="container">
+      <a id="first"></a>
+      <a href="#Home" id="a">Home</a>
+      <a href="#News" id="b">News</a>
+      <a href="#Contact" id="c">Contact</a>
+      <a href="#About" id="d">About</a>
+      <a id="e"></a>
+      <a href="#Shop" id="f">Shop</a>
+      <a id="last"></a>
+
+      <div class="content">
+        <h2>Responsive Navbar Example using Grid</h2>
+        <p>This example use media queries to transform the sidenav to a top navigation bar when the screen size is 1080px or less.</p>
+        <p>We have also added a media query for screens that are 600px or less, which will vertically stack and center the navigation links.</p>
+        <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
+        <h3>Resize the browser window to see the effect.</h3>
+      </div>
+      
+      <p class="footer">This should be a footer</p>
+    </div>    
+  </body>
+</html>
