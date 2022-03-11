@@ -11,12 +11,11 @@
 
       html {
         height: 100%;
-        width: 100%;
       }
 
       body {
         position: relative;
-        height: 100%;
+        min-height: 100%;
         margin: 0;
         font-family: Verdana, Tahoma, sans-serif;
       }
@@ -51,7 +50,7 @@
       }
 
       .footer {
-        position: fixed;
+        position: absolute;
         bottom: 0;
         width: 100%;
         margin: 0;
@@ -60,7 +59,7 @@
         text-align: center;
       }
 
-      @media screen and (min-width:600px) {
+      @media screen and (min-width:600px) and (max-width:1080px) {
         .navbar {
           flex-direction: row;
         }
@@ -71,6 +70,13 @@
       }
 
       @media screen and (min-width:1080px) {
+        /*The footer needs min-height in the body to stop at the right place so this remains the only
+        way to let the navbar extend to the end of the body without knowing its precise height*/
+        body {
+          display: flex;
+          flex-direction: column;
+        }
+
         .row {
           display: flex;
           height: 100%;
@@ -82,20 +88,11 @@
           flex-direction: column;
         }
 
-        /*Just to make the sidebar always colored even when height is very small and you scroll down*/
-        .navbar a {
-          background-color: #f1f1f1;
-        }
-
         .navbar a.first {
           margin-top: 50px;
         }
 
-        .navbar a.right {
-          margin-left: 0;
-        }
-
-        /*Just to fix a bug in big width, small heigth (shop link not visible)*/
+        /*Just to make the footer stop in the exact place when resizing the height*/
         .navbar #last {
           display: inline-block;
           padding: 26px;

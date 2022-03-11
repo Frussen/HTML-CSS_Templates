@@ -9,10 +9,15 @@
         box-sizing: border-box;
       }
 
-      body {
-        font-family: Verdana, Tahoma, sans-serif;
+      html {
         height: 100%;
+      }
+
+      body {
+        position: relative;
+        min-height: 100%;
         margin: 0;
+        font-family: Verdana, Tahoma, sans-serif;
       }
 
       .navbar {
@@ -35,20 +40,14 @@
         color: white;
       }
 
-      .navbar a.last {
-        display: none;
-      }
-
       .content {
         width: 100%;
         padding: 20px 50px 50px;
       }
 
       .footer {
-        position: fixed;
+        position: absolute;
         bottom: 0;
-        padding: 7px;
-        margin: 0;
         width: 100%;
         background-color: #555;
         color: white;
@@ -88,20 +87,13 @@
           margin-top: 50px;
         }
 
-        /*Just to fix a bug in big width, small heigth (shop link not visible)*/
-        .navbar a.last {
-          display: inline-block;
-        }
-
-        .navbar a.last:hover {
-          background-color: #f1f1f1;
-          cursor: context-menu;
-        }
-
+        /*the height is set so that the footer stop at the exact right moment when resizing
+        the brouser's height despite the content height changes because of wrapping*/
         .content {
           width: 90%;
+          height: 367px;
           margin-left: 10vw;
-          padding: 20px 50px;
+          padding: 20px 50px 150px;
         }
       }
 
@@ -114,7 +106,6 @@
       <a href="#Contact">Contact</a>
       <a href="#About">About</a>
       <a href="#Shop" class="right">Shop</a>
-      <a href="" class="last"></a>
     </div>
 
     <div class="content">
@@ -126,7 +117,7 @@
     </div>
 
     <div class="footer">
-      This should be a footer
+      <p>This should be a footer</p>
     </div>
   </body>
 </html>
